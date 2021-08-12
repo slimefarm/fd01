@@ -4,5 +4,3 @@ import hashlib
 
 st.title("SlimeFarm SampleSite")
 st.subheader("Login Site")
-st.write("password")
-st.write(password)
