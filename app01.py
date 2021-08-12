@@ -8,4 +8,4 @@ st.subheader("Login Site")
 from __future__ import absolute_import, unicode_literals
 import os
 
-print(os.environ.get('PASSWORD'))
+st.write(os.environ.get('PASSWORD'))
