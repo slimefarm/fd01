@@ -32,9 +32,10 @@ def login_user(username,password):
 
 def main():
     st.title("SlimeFarm SampleSite")
+    st.subheader("Login Site")
     username = st.sidebar.text_input("username")
     password = st.sidebar.text_input("password",type='password')
-    if st.sidebar.button("login"):
+    if st.sidebar.button("Login"):
         create_user()
         hashed_pswd = make_hashes(password)
 
