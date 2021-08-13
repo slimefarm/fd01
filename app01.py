@@ -32,8 +32,7 @@ def login_user(username,password):
 
 def main():
     st.title("SlimeFarm SampleSite")
-    st.sidebar.subheader("LoginSite")
-    username = st.sidebar.text_input("")
+    username = st.sidebar.text_input("id")
     password = st.sidebar.text_input("password",type='password')
     if st.sidebar.checkbox("login"):
         create_user()
