@@ -33,7 +33,6 @@ def app():
         
         st.write("件名 / " + subject)
         st.write(body)
-        #body = st.write('{0}様\n\nお世話になっております。\n\n{1}をお送りいたします。\n\nご確認ください。\n\nfrom tomotaka'.format(send_name,file_name))
 
     #添付ファイルを指定する
     st.subheader("Attachment file")
@@ -68,32 +67,31 @@ def app():
         from_address = smtp_user
         #subject = "タイトル"
         #body = "本文"
-        #st.write('{0}様\n\nお世話になっております。\n\n{1}をお送りいたします。\n\nご確認ください。\n\nfrom tomotaka'.format(send_name,file_name))
         #filepath = "./sample.txt"
         #filename = os.path.basename(filepath)
-        filepath01 ="./sample_01.txt"
+        filepath01 ="./sampletxt/sample_01.txt"
         filename01 = os.path.basename(filepath01)
-        filepath02 ="./sample_02.txt"
+        filepath02 ="./sampletxt/sample_02.txt"
         filename02 = os.path.basename(filepath02)
-        filepath03 ="./sample_03.txt"
+        filepath03 ="./sampletxt/sample_03.txt"
         filename03 = os.path.basename(filepath03)
-        filepath04 ="./sample_04.txt"
+        filepath04 ="./sampletxt/sample_04.txt"
         filename04 = os.path.basename(filepath04)
-        filepath05 ="./sample_05.txt"
+        filepath05 ="./sampletxt/sample_05.txt"
         filename05 = os.path.basename(filepath05)
-        filepath06 ="./sample_06.txt"
+        filepath06 ="./sampletxt/sample_06.txt"
         filename06 = os.path.basename(filepath06)
-        filepath07 ="./sample_07.txt"
+        filepath07 ="./sampletxt/sample_07.txt"
         filename07 = os.path.basename(filepath07)
-        filepath08 ="./sample_08.txt"
+        filepath08 ="./sampletxt/sample_08.txt"
         filename08 = os.path.basename(filepath08)
-        filepath09 ="./sample_09.txt"
+        filepath09 ="./sampletxt/sample_09.txt"
         filename09 = os.path.basename(filepath09)
-        filepath10 ="./sample_10.txt"
+        filepath10 ="./sampletxt/sample_10.txt"
         filename10 = os.path.basename(filepath10)
-        filepath11 ="./sample_11.txt"
+        filepath11 ="./sampletxt/sample_11.txt"
         filename11 = os.path.basename(filepath11)
-        filepath12 ="./sample_12.txt"
+        filepath12 ="./sampletxt/sample_12.txt"
         filename12 = os.path.basename(filepath12)
 
         #メール文書を送付用データ（添付ファイル付）を生成
@@ -174,4 +172,4 @@ def app():
         s.sendmail(from_address, to_address, msg.as_string())
         s.quit()
 
-        st.write("Transmission completed !")
+        st.success("Transmission completed !")

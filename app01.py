@@ -2,6 +2,7 @@ import streamlit as st
 import sqlite3
 import hashlib
 import app02
+import app99
 
 #LoginPassをしまうLBboxを作る
 conn = sqlite3.connect('LPBox.db')
@@ -41,8 +42,8 @@ def main():
 
     result = login_user(username,check_hashes(password,hashed_pswd))
     if result:
-        #PAGES = {"Send Gmail": app02,"App3": app03}
-        PAGES = {"Send Gmail": app02}
+        #PAGES = {"App2": app02,"App3": app03}
+        PAGES = {"Send Gmail": app02,"Configuration":app99}
         st.sidebar.subheader('Navi Site')
         selection = st.sidebar.selectbox("menu",PAGES)
         page = PAGES[selection]
@@ -50,16 +51,6 @@ def main():
         
     else:
         st.sidebar.warning("*Hi ! pls input username & password !*")
-    
-    #elif choice == "サインアップ":
-        #st.subheader("新しいアカウントを作成します")
-        #new_user = st.text_input("ユーザー名を入力してください")
-        #new_password = st.text_input("パスワードを入力してください",type='password')
 
-        #if st.button("サインアップ"):
-            #create_user()
-            #add_user(new_user,make_hashes(new_password))
-            #st.success("アカウントの作成に成功しました")
-            #st.info("ログイン画面からログインしてください")
 if __name__ == '__main__':
         main()
