@@ -2,7 +2,6 @@ import streamlit as st
 import sqlite3
 import hashlib
 import app02
-import app03
 
 #LoginPassをしまうLBboxを作る
 conn = sqlite3.connect('LPBox.db')
