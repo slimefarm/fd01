@@ -5,6 +5,9 @@ import app01
 
 def app():
 
+    #新しいアカウントをつくる
+    st.subheader("app / Create a new account")
+
     #LoginPassをしまうLBboxを作る
     conn = sqlite3.connect('LPBox.db')
     c = conn.cursor()
@@ -31,7 +34,6 @@ def app():
         data = c.fetchall()
         return data
 
-    st.subheader("Create a new account")
     new_user = st.text_input("pls input username !")
     new_password = st.text_input("pls input password !",type='password')
 
