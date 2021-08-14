@@ -9,7 +9,7 @@ def app():
 
     #Gmailを送付
     st.subheader("app / Send Gmail")
-    st.write(st.secrets["PASSWORD2"])
+ 
     st.subheader("Delivery address")
     #left_column,right_column = st.columns(2)
     left_column,right_column = st.columns([1,5])
@@ -34,7 +34,7 @@ def app():
         from_address = smtp_user
         subject = "タイトル"
         body = "本文"
-        filepath = "C:/Users/slime/Desktop/sample.txt"
+        filepath = "./sample.txt"
         filename = os.path.basename(filepath)
 
         #メール文書を送付用データ（添付ファイル付）を生成
