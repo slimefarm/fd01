@@ -11,31 +11,48 @@ def app():
     #Gmailを送付
     st.subheader("app / Send Gmail")
  
+    #送付先を指定する
     st.subheader("Delivery address")
     #left_column,right_column = st.columns(2)
     left_column,right_column = st.columns([1,4])
-    select = left_column.selectbox("Reji or New",(" ","Reji","New"))
-    if select == "Reji":
+    select = left_column.radio("Rejister or New",("Rejister","New"))
+    if select == "Rejister":
         to_address = right_column.selectbox('Pls select mail-address',(" ",'tomotaka.a@gmail.com','slimefarm0304@gmail.com','style.azuma@gmail.com'))
     elif select == "New":
         to_address = right_column.text_input('Pls input mail-address')
 
-    st.subheader("Select file")
-    left_column, center_column, right_column = st.columns(3)
-    file_01 = left_column.checkbox('samplefile_01')
-    file_02 = left_column.checkbox('samplefile_02')
-    file_03 = left_column.checkbox('samplefile_03')
-    file_04 = left_column.checkbox('samplefile_04')
+    #タイトル、本文を確認する
+    st.subheader("Message")
+    with st.expander("Check the message"):
+        option = st.text_input('Recipient name    ex ) 東 , 東京銀行　東')
+        subject = "資料送付"
+        if bool(option) == True:
+            body = option + " 様\n\n資料を送付いたします。\n\nご確認いただきまして、不明な点や不足する点がございましたらご連絡いただけますようお願い申し上げます。\n\nSlimeFarm 東 智隆"
+        else:
+            body = ("資料を送付いたします。\n\nご確認いただきまして、不明点や不足点がございましたら、ご連絡くださいますようお願い申し上げます。\n\nSlimeFarm 東 智隆")
+        
+        st.write("件名 / " + subject)
+        st.write(body)
+        #body = st.write('{0}様\n\nお世話になっております。\n\n{1}をお送りいたします。\n\nご確認ください。\n\nfrom tomotaka'.format(send_name,file_name))
 
-    file_05 = center_column.checkbox('samplefile_05')
-    file_06 = center_column.checkbox('samplefile_06')
-    file_07 = center_column.checkbox('samplefile_07')
-    file_08 = center_column.checkbox('samplefile_08')
+    #添付ファイルを指定する
+    st.subheader("Attachment file")
+    with st.expander("Select file"):
+        left_column, center_column, right_column = st.columns(3)
+        file_01 = left_column.checkbox('samplefile_01')
+        file_02 = left_column.checkbox('samplefile_02')
+        file_03 = left_column.checkbox('samplefile_03')
+        file_04 = left_column.checkbox('samplefile_04')
 
-    file_09 = right_column.checkbox('samplefile_09')
-    file_10 = right_column.checkbox('samplefile_10')
-    file_11 = right_column.checkbox('samplefile_11')
-    file_12 = right_column.checkbox('samplefile_12')
+        file_05 = center_column.checkbox('samplefile_05')
+        file_06 = center_column.checkbox('samplefile_06')
+        file_07 = center_column.checkbox('samplefile_07')
+        file_08 = center_column.checkbox('samplefile_08')
+
+        file_09 = right_column.checkbox('samplefile_09')
+        file_10 = right_column.checkbox('samplefile_10')
+        file_11 = right_column.checkbox('samplefile_11')
+        file_12 = right_column.checkbox('samplefile_12')
 
     res = st.button("send")
     if res ==True:
@@ -49,8 +66,9 @@ def app():
         #メール文書の設定
         #to_address = "送付先アドレス"
         from_address = smtp_user
-        subject = "タイトル"
-        body = "本文"
+        #subject = "タイトル"
+        #body = "本文"
+        #st.write('{0}様\n\nお世話になっております。\n\n{1}をお送りいたします。\n\nご確認ください。\n\nfrom tomotaka'.format(send_name,file_name))
         #filepath = "./sample.txt"
         #filename = os.path.basename(filepath)
         filepath01 ="./sample_01.txt"
