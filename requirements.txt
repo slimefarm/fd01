@@ -1,4 +1,3 @@
 streamlit
-MIMEMultipart
 MIMEText
 MIMEApplication
