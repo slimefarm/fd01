@@ -50,7 +50,7 @@ def main():
         page.app()
         
     else:
-        st.sidebar.warning("*Hi ! pls input username & password !*")
+        st.sidebar.info("*Hi ! pls input username & password !*")
 
 if __name__ == '__main__':
         main()
