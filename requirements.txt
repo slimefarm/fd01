@@ -1,5 +1,4 @@
 streamlit
-hashlib
 smtplib
 os
 MIMEMultipart
