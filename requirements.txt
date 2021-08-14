@@ -1,1 +1,8 @@
 streamlit
+sqlite3
+hashlib
+smtplib
+os
+MIMEMultipart
+MIMEText
+MIMEApplication
