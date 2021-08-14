@@ -1,7 +1,6 @@
 import streamlit as st
 import sqlite3
 import hashlib
-import app01
 
 def app():
 
