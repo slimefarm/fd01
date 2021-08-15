@@ -84,5 +84,5 @@ def app():
 
     except:
         st.error(
-            "Wow ! Something is wrong."
+            "Whoops --  Something went wrong !"
         )
