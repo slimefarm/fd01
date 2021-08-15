@@ -3,6 +3,7 @@ import sqlite3
 import hashlib
 import app01
 import app02
+import app03
 import app99
 
 #LoginPassをしまうLBboxを作る
@@ -44,7 +45,7 @@ def main():
     result = login_user(username,check_hashes(password,hashed_pswd))
     if result:
         #PAGES = {"App2": app02,"App3": app03}
-        PAGES = {" " : app01,"Send Gmail": app02,"Configuration":app99}
+        PAGES = {" " : app01,"Send Gmail": app02,"Stock Price": app03,"Configuration":app99}
         st.sidebar.subheader('Navi Site')
         selection = st.sidebar.selectbox("menu",PAGES)
         page = PAGES[selection]
