@@ -83,6 +83,4 @@ def app():
             st.altair_chart(chart, use_container_width=True)
 
     except:
-        st.error(
-            "Whoops --  Something went wrong !"
-        )
+        st.error("Whoops --  Something went wrong !")
